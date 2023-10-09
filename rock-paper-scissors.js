@@ -6,7 +6,7 @@
 // Return userChoice, opponentChoice, and result
 
 // Script randomly select one of the three choices
-let getComputerChoice = function() {
+function getComputerChoice() {
     let randNumber = Math.floor(Math.random() * 3);
     let randChoice;
 
@@ -24,6 +24,10 @@ const computerSelection = getComputerChoice();
 
 // Compares the inputs and selects one of three result (win, lose, or tie)
 function playRound(playerSelection, computerSelection) {
+    
+    // For case sensitivity
+    playerSelection = playerSelection.toLowerCase();
+
     console.log("You have selected " + playerSelection + "!");
     console.log("Computer has selected " + computerSelection + "!");
 
@@ -35,7 +39,7 @@ function playRound(playerSelection, computerSelection) {
             case "paper":
                 return "You lose! Paper beats rock!";
             case "scissors":
-                return "You Won! Rock beats Paper";
+                return "You won! Rock beats paper";
         }
     }
     
@@ -45,9 +49,9 @@ function playRound(playerSelection, computerSelection) {
             case "rock":
                 return "You win! Paper beats rock!";
             case "paper":
-                return "It is a Tie! You both selected paper!";
+                return "It is a tie! You both selected paper!";
             case "scissors":
-                return "You lose! Rock beats paper!";
+                return "You lose! Scissors beats paper!";
         }
     }
     
@@ -57,11 +61,11 @@ function playRound(playerSelection, computerSelection) {
             case "rock":
                 return "You lose! Rock beats scissors!";
             case "paper":
-                return "You Win! Scissors beats paper!";
+                return "You win! Scissors beats paper!";
             case "scissors":
-                return "It is a tie! You both pick Scissors!";
+                return "It is a tie! You both pick scissors!";
         }
     }
 }
 
-console.log(playRound("scissors", computerSelection));
+console.log(playRound("ROCK", computerSelection));
