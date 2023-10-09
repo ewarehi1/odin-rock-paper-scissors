@@ -26,7 +26,7 @@ const computerSelection = getComputerChoice();
 function playRound(playerSelection, computerSelection) {
     
     // if player selects rock
-    if (playerSelection = "rock") {
+    if (playerSelection === "rock") {
         switch (computerSelection) {
             case "rock":
                 return "It is a tie! You both select rock!";
@@ -37,7 +37,7 @@ function playRound(playerSelection, computerSelection) {
         }
     }
     
-    if (playerSelection ="paper") { // If player selects paper
+    if (playerSelection === "paper") { // If player selects paper
         switch (computerSelection) {
             case "rock":
                 return "You win! Paper beats rock!";
@@ -48,7 +48,7 @@ function playRound(playerSelection, computerSelection) {
         }
     }
     
-    if (playerSelection = "scissors" || "scissor") { // If player selects scissors
+    if (playerSelection === "scissors" || "scissor") { // If player selects scissors
         switch (computerSelection) {
             case "rock":
                 return "You lose! Rock beats scissors!";
