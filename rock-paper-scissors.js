@@ -1,6 +1,7 @@
 // PSUEDOCODE:
-// Establish the three choices (rock, paper, or scissors)
-// When user inputs one of three choices 
+
+// When user inputs one of three choices (rock, paper, or scissors)
 // Script randomly select one of the three choices
-// Then compares the inputs
-// Outputs one of three responses (win, lose, or tie)
+// Compares the inputs and selects one of three result (win, lose, or tie)
+// Return userChoice, opponentChoice, and result
+
