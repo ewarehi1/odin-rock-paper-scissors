@@ -36,9 +36,8 @@ function playRound(playerSelection, computerSelection) {
                 return "You Won! Rock beats Paper";
         }
     }
-
-    // If player selects paper
-    if (playerSelection = "paper") {
+    
+    if (playerSelection ="paper") { // If player selects paper
         switch (computerSelection) {
             case "rock":
                 return "You win! Paper beats rock!";
@@ -48,5 +47,16 @@ function playRound(playerSelection, computerSelection) {
                 return "You lose! Rock beats paper!";
         }
     }
+    
+    if (playerSelection = "scissors" || "scissor") { // If player selects scissors
+        switch (computerSelection) {
+            case "rock":
+                return "You lose! Rock beats scissors!";
+            case "paper":
+                return "You Win! Scissors beats paper!";
+            case "scissors":
+                return "It is a tie! You both pick Scissors!";
+        }
+    }
 }
-console.log(playRound("paper", computerSelection));
+console.log(playRound("scissors", computerSelection));
