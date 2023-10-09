@@ -24,7 +24,9 @@ const computerSelection = getComputerChoice();
 
 // Compares the inputs and selects one of three result (win, lose, or tie)
 function playRound(playerSelection, computerSelection) {
-    
+    console.log("You have selected " + playerSelection + "!");
+    console.log("Computer has selected " + computerSelection + "!");
+
     // if player selects rock
     if (playerSelection === "rock") {
         switch (computerSelection) {
@@ -37,7 +39,8 @@ function playRound(playerSelection, computerSelection) {
         }
     }
     
-    if (playerSelection === "paper") { // If player selects paper
+    // If player selects paper
+    if (playerSelection === "paper") {
         switch (computerSelection) {
             case "rock":
                 return "You win! Paper beats rock!";
@@ -48,7 +51,8 @@ function playRound(playerSelection, computerSelection) {
         }
     }
     
-    if (playerSelection === "scissors" || "scissor") { // If player selects scissors
+    // If player selects scissors
+    if (playerSelection === "scissors" || "scissor") {
         switch (computerSelection) {
             case "rock":
                 return "You lose! Rock beats scissors!";
@@ -59,4 +63,5 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 }
+
 console.log(playRound("scissors", computerSelection));
