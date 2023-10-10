@@ -23,12 +23,13 @@ function getComputerChoice() {
 };
 const computerSelection = getComputerChoice();
 
+
 // Keeps score for five games to decide winner
 function game() {
-
+    
     // Compares the inputs and selects one of three result (win, lose, or tie)
     function playRound(playerSelection, computerSelection) {
-        
+
         // For case sensitivity
         playerSelection = playerSelection.toLowerCase();
 
@@ -72,9 +73,23 @@ function game() {
         }
     }
 
+    // Round 1
     // When user inputs one of three choices (rock, paper, or scissors)
-    const playerSelection = prompt("Time for a game of Rock, Paper, Scissors!\nWhat do you choose?");
-
+    let playerSelection = prompt("Time for a game of Rock, Paper, Scissors!\nWhat do you choose?");
     // Return userChoice, opponentChoice, and result:
     alert(playRound(playerSelection, computerSelection));
+    
+    // Round 2
+    playerSelection = prompt("Time for a game of Rock, Paper, Scissors!\nWhat do you choose?");
+    alert(playRound(playerSelection, computerSelection));
+    // Round 3
+    playerSelection = prompt("Time for a game of Rock, Paper, Scissors!\nWhat do you choose?");
+    alert(playRound(playerSelection, computerSelection));
+    // Round 4
+    playerSelection = prompt("Time for a game of Rock, Paper, Scissors!\nWhat do you choose?");
+    alert(playRound(playerSelection, computerSelection));
+    // Round 5
+    playerSelection = prompt("Time for a game of Rock, Paper, Scissors!\nWhat do you choose?");
+    alert(playRound(playerSelection, computerSelection));
+    
 }
