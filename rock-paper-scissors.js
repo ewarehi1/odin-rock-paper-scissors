@@ -28,6 +28,8 @@ const computerSelection = getComputerChoice();
 // Keeps score for five games to decide winner
 function game() {
     
+    let playerScore = 0;
+    let computerScore = 0;
     let computerSelection;
 
     // Compares the inputs and selects one of three result (win, lose, or tie)
@@ -47,8 +49,10 @@ function game() {
                 case "rock":
                     return "It is a tie! You both select rock!";
                 case "paper":
+                    ++computerScore;
                     return "You lose! Paper beats rock!";
                 case "scissors":
+                    ++playerScore;
                     return "You won! Rock beats paper";
             }
         }
@@ -57,10 +61,12 @@ function game() {
         if (playerSelection === "paper") {
             switch (computerSelection) {
                 case "rock":
+                    ++playerScore;
                     return "You win! Paper beats rock!";
                 case "paper":
                     return "It is a tie! You both selected paper!";
                 case "scissors":
+                    ++computerScore;
                     return "You lose! Scissors beats paper!";
             }
         }
@@ -69,8 +75,10 @@ function game() {
         if (playerSelection === "scissors" || "scissor") {
             switch (computerSelection) {
                 case "rock":
+                    ++computerScore;
                     return "You lose! Rock beats scissors!";
                 case "paper":
+                    ++playerScore;
                     return "You win! Scissors beats paper!";
                 case "scissors":
                     return "It is a tie! You both pick scissors!";
@@ -87,14 +95,19 @@ function game() {
     // Round 2
     playerSelection = prompt("Time for a game of Rock, Paper, Scissors!\nWhat do you choose?");
     alert(playRound(playerSelection, computerSelection));
+
     // Round 3
     playerSelection = prompt("Time for a game of Rock, Paper, Scissors!\nWhat do you choose?");
     alert(playRound(playerSelection, computerSelection));
+
     // Round 4
     playerSelection = prompt("Time for a game of Rock, Paper, Scissors!\nWhat do you choose?");
     alert(playRound(playerSelection, computerSelection));
+
     // Round 5
     playerSelection = prompt("Time for a game of Rock, Paper, Scissors!\nWhat do you choose?");
     alert(playRound(playerSelection, computerSelection));
-    
+
+    // Alert score
+    alert("The score is " + playerScore + " : " + computerScore);
 }
