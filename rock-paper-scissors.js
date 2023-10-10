@@ -3,7 +3,8 @@
 // When user inputs one of three choices (rock, paper, or scissors)
 // Script randomly select one of the three choices
 // Compares the inputs and selects one of three result (win, lose, or tie)
-// Return userChoice, opponentChoice, and result
+// Keeps score for five games to decide winner
+// Return userChoice, opponentChoice, result of round, and result of game.
 
 // When user inputs one of three choices (rock, paper, or scissors)
 const playerSelection = prompt("Time for a game of Rock, Paper, Scissors!\nWhat do you choose?");
@@ -24,8 +25,6 @@ function getComputerChoice() {
     return randChoice;
 };
 const computerSelection = getComputerChoice();
-
-computerSelection = 7;
 
 // Compares the inputs and selects one of three result (win, lose, or tie)
 function playRound(playerSelection, computerSelection) {
@@ -73,4 +72,5 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+// Return userChoice, opponentChoice, and result:
 alert(playRound(playerSelection, computerSelection));
