@@ -21,14 +21,19 @@ function getComputerChoice() {
 
     return randChoice;
 };
+/*
 const computerSelection = getComputerChoice();
-
+*/
 
 // Keeps score for five games to decide winner
 function game() {
     
+    let computerSelection;
+
     // Compares the inputs and selects one of three result (win, lose, or tie)
     function playRound(playerSelection, computerSelection) {
+
+        computerSelection = getComputerChoice();
 
         // For case sensitivity
         playerSelection = playerSelection.toLowerCase();
