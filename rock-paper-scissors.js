@@ -6,9 +6,6 @@
 // Keeps score for five games to decide winner
 // Return userChoice, opponentChoice, result of round, and result of game.
 
-// When user inputs one of three choices (rock, paper, or scissors)
-const playerSelection = prompt("Time for a game of Rock, Paper, Scissors!\nWhat do you choose?");
-
 // Script randomly select one of the three choices
 function getComputerChoice() {
     let randNumber = Math.floor(Math.random() * 3);
@@ -26,51 +23,58 @@ function getComputerChoice() {
 };
 const computerSelection = getComputerChoice();
 
-// Compares the inputs and selects one of three result (win, lose, or tie)
-function playRound(playerSelection, computerSelection) {
-    
-    // For case sensitivity
-    playerSelection = playerSelection.toLowerCase();
+// Keeps score for five games to decide winner
+function game() {
 
-    console.log("You have selected " + playerSelection + "!");
-    console.log("Computer has selected " + computerSelection + "!");
+    // Compares the inputs and selects one of three result (win, lose, or tie)
+    function playRound(playerSelection, computerSelection) {
+        
+        // For case sensitivity
+        playerSelection = playerSelection.toLowerCase();
 
-    // if player selects rock
-    if (playerSelection === "rock") {
-        switch (computerSelection) {
-            case "rock":
-                return "It is a tie! You both select rock!";
-            case "paper":
-                return "You lose! Paper beats rock!";
-            case "scissors":
-                return "You won! Rock beats paper";
+        console.log("You have selected " + playerSelection + "!");
+        console.log("Computer has selected " + computerSelection + "!");
+
+        // if player selects rock
+        if (playerSelection === "rock") {
+            switch (computerSelection) {
+                case "rock":
+                    return "It is a tie! You both select rock!";
+                case "paper":
+                    return "You lose! Paper beats rock!";
+                case "scissors":
+                    return "You won! Rock beats paper";
+            }
+        }
+        
+        // If player selects paper
+        if (playerSelection === "paper") {
+            switch (computerSelection) {
+                case "rock":
+                    return "You win! Paper beats rock!";
+                case "paper":
+                    return "It is a tie! You both selected paper!";
+                case "scissors":
+                    return "You lose! Scissors beats paper!";
+            }
+        }
+        
+        // If player selects scissors
+        if (playerSelection === "scissors" || "scissor") {
+            switch (computerSelection) {
+                case "rock":
+                    return "You lose! Rock beats scissors!";
+                case "paper":
+                    return "You win! Scissors beats paper!";
+                case "scissors":
+                    return "It is a tie! You both pick scissors!";
+            }
         }
     }
-    
-    // If player selects paper
-    if (playerSelection === "paper") {
-        switch (computerSelection) {
-            case "rock":
-                return "You win! Paper beats rock!";
-            case "paper":
-                return "It is a tie! You both selected paper!";
-            case "scissors":
-                return "You lose! Scissors beats paper!";
-        }
-    }
-    
-    // If player selects scissors
-    if (playerSelection === "scissors" || "scissor") {
-        switch (computerSelection) {
-            case "rock":
-                return "You lose! Rock beats scissors!";
-            case "paper":
-                return "You win! Scissors beats paper!";
-            case "scissors":
-                return "It is a tie! You both pick scissors!";
-        }
-    }
+
+    // When user inputs one of three choices (rock, paper, or scissors)
+    const playerSelection = prompt("Time for a game of Rock, Paper, Scissors!\nWhat do you choose?");
+
+    // Return userChoice, opponentChoice, and result:
+    alert(playRound(playerSelection, computerSelection));
 }
-
-// Return userChoice, opponentChoice, and result:
-alert(playRound(playerSelection, computerSelection));
