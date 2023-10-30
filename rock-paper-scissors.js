@@ -110,4 +110,6 @@ function game() {
 
     // Alert score
     alert("The score is " + playerScore + " : " + computerScore);
+
+    // test
 }
