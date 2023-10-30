@@ -21,12 +21,9 @@ function getComputerChoice() {
 
     return randChoice;
 };
-/*
-const computerSelection = getComputerChoice();
-*/
 
 // Keeps score for five games to decide winner
-function game() {
+function game(playerSelection) {
     
     let playerScore = 0;
     let computerScore = 0;
@@ -86,30 +83,20 @@ function game() {
         }
     }
 
-    // Round 1
-    // When user inputs one of three choices (rock, paper, or scissors)
-    let playerSelection = prompt("Time for a game of Rock, Paper, Scissors!\nWhat do you choose?");
-    // Return userChoice, opponentChoice, and result:
-    alert(playRound(playerSelection, computerSelection));
-    
-    // Round 2
-    playerSelection = prompt("Time for a game of Rock, Paper, Scissors!\nWhat do you choose?");
-    alert(playRound(playerSelection, computerSelection));
-
-    // Round 3
-    playerSelection = prompt("Time for a game of Rock, Paper, Scissors!\nWhat do you choose?");
-    alert(playRound(playerSelection, computerSelection));
-
-    // Round 4
-    playerSelection = prompt("Time for a game of Rock, Paper, Scissors!\nWhat do you choose?");
-    alert(playRound(playerSelection, computerSelection));
-
-    // Round 5
-    playerSelection = prompt("Time for a game of Rock, Paper, Scissors!\nWhat do you choose?");
-    alert(playRound(playerSelection, computerSelection));
-
-    // Alert score
-    alert("The score is " + playerScore + " : " + computerScore);
-
-    // test
+    console.log(playRound(playerSelection, computerSelection));
 }
+
+const rock = document.querySelector('#rock');
+rock.addEventListener('click', () => {
+    game("rock");
+});
+
+const paper = document.querySelector("#paper");
+paper.addEventListener('click', () => {
+    game("paper");
+});
+
+const scissors = document.querySelector("#scissors");
+scissors.addEventListener('click', () => {
+    game("scissors");
+});
