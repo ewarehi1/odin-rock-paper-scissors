@@ -27,18 +27,13 @@ function game(playerSelection) {
     
     let playerScore = 0;
     let computerScore = 0;
-    let computerSelection;
+    let computerSelection = getComputerChoice();
 
     // Compares the inputs and selects one of three result (win, lose, or tie)
     function playRound(playerSelection, computerSelection) {
 
-        computerSelection = getComputerChoice();
-
         // For case sensitivity
         playerSelection = playerSelection.toLowerCase();
-
-        console.log("You have selected " + playerSelection + "!");
-        console.log("Computer has selected " + computerSelection + "!");
 
         // if player selects rock
         if (playerSelection === "rock") {
@@ -83,7 +78,19 @@ function game(playerSelection) {
         }
     }
 
-    console.log(playRound(playerSelection, computerSelection));
+    const gameMessages = document.querySelector("#game-messages");
+    
+    let playerMessage = document.createElement('div');
+    playerMessage.textContent = `You have selected ${playerSelection}!`;
+    gameMessages.appendChild(playerMessage);
+    
+    let comMessage = document.createElement('div');
+    comMessage.textContent = `Computer has selected ${computerSelection}!`;
+    gameMessages.appendChild(comMessage);
+
+    let resultMessage = document.createElement('div');
+    resultMessage.textContent = `${playRound(playerSelection, computerSelection)}`;
+    gameMessages.appendChild(resultMessage);
 }
 
 const rock = document.querySelector('#rock');
