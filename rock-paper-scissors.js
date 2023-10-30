@@ -53,7 +53,7 @@ function game() {
                     return "You lose! Paper beats rock!";
                 case "scissors":
                     ++playerScore;
-                    return "You won! Rock beats paper";
+                    return "You won! Scissors beats paper";
             }
         }
         
