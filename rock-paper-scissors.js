@@ -83,6 +83,18 @@ function game(playerSelection) {
     newScore.classList.add('score');
     newScore.textContent = `Score   ${playerScore}:${computerScore}`;
     oldScore.replaceWith(newScore);
+
+    if (playerScore == 5) {
+        const playerWin = document.createElement('div');
+        playerWin.textContent = "You win!";
+        playerWin.style.fontWeight = 'bold';
+        gameMessages.appendChild(playerWin);
+    } else if (computerScore == 5) {
+        const computerWin = document.createElement('div');
+        computerWin.textContent = "You lose!";
+        computerWin.style.fontWeight = 'bold';
+        gameMessages.appendChild(computerWin);
+    }
 }
 
 const rock = document.querySelector('#rock');
