@@ -29,6 +29,14 @@ function game(playerSelection) {
     let computerScore = 0;
     let computerSelection = getComputerChoice();
 
+    const gameMessages = document.querySelector("#game-messages");
+    
+    let message = gameMessages.lastChild;
+    while (message) {
+        gameMessages.removeChild(message);
+        message = gameMessages.lastChild;
+    }
+
     // Compares the inputs and selects one of three result (win, lose, or tie)
     function playRound(playerSelection, computerSelection) {
 
@@ -77,19 +85,20 @@ function game(playerSelection) {
             }
         }
     }
-
-    const gameMessages = document.querySelector("#game-messages");
     
     let playerMessage = document.createElement('div');
     playerMessage.textContent = `You have selected ${playerSelection}!`;
+    playerMessage.classList.add('message');
     gameMessages.appendChild(playerMessage);
     
     let comMessage = document.createElement('div');
     comMessage.textContent = `Computer has selected ${computerSelection}!`;
+    comMessage.classList.add('message');
     gameMessages.appendChild(comMessage);
 
     let resultMessage = document.createElement('div');
     resultMessage.textContent = `${playRound(playerSelection, computerSelection)}`;
+    resultMessage.classList.add('message');
     gameMessages.appendChild(resultMessage);
 }
 
