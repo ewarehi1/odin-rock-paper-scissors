@@ -1,12 +1,3 @@
-// PSUEDOCODE:
-
-// When user inputs one of three choices (rock, paper, or scissors)
-// Script randomly select one of the three choices
-// Compares the inputs and selects one of three result (win, lose, or tie)
-// Keeps score for five games to decide winner
-// Return userChoice, opponentChoice, result of round, and result of game.
-
-// Script randomly select one of the three choices
 function getComputerChoice() {
     let randNumber = Math.floor(Math.random() * 3);
     let randChoice;
@@ -22,7 +13,6 @@ function getComputerChoice() {
     return randChoice;
 };
 
-// Keeps score for five games to decide winner
 function game(playerSelection) {
     
     let playerScore = 0;
@@ -37,13 +27,11 @@ function game(playerSelection) {
         message = gameMessages.lastChild;
     }
 
-    // Compares the inputs and selects one of three result (win, lose, or tie)
     function playRound(playerSelection, computerSelection) {
 
         // For case sensitivity
         playerSelection = playerSelection.toLowerCase();
 
-        // if player selects rock
         if (playerSelection === "rock") {
             switch (computerSelection) {
                 case "rock":
@@ -57,7 +45,6 @@ function game(playerSelection) {
             }
         }
         
-        // If player selects paper
         if (playerSelection === "paper") {
             switch (computerSelection) {
                 case "rock":
@@ -71,7 +58,6 @@ function game(playerSelection) {
             }
         }
         
-        // If player selects scissors
         if (playerSelection === "scissors" || "scissor") {
             switch (computerSelection) {
                 case "rock":
@@ -88,17 +74,14 @@ function game(playerSelection) {
     
     let playerMessage = document.createElement('div');
     playerMessage.textContent = `You have selected ${playerSelection}!`;
-    playerMessage.classList.add('message');
     gameMessages.appendChild(playerMessage);
     
     let comMessage = document.createElement('div');
     comMessage.textContent = `Computer has selected ${computerSelection}!`;
-    comMessage.classList.add('message');
     gameMessages.appendChild(comMessage);
 
     let resultMessage = document.createElement('div');
     resultMessage.textContent = `${playRound(playerSelection, computerSelection)}`;
-    resultMessage.classList.add('message');
     gameMessages.appendChild(resultMessage);
 }
 
