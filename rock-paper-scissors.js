@@ -13,10 +13,10 @@ function getComputerChoice() {
     return randChoice;
 };
 
+let playerScore = 0;
+let computerScore = 0;
+
 function game(playerSelection) {
-    
-    let playerScore = 0;
-    let computerScore = 0;
     let computerSelection = getComputerChoice();
 
     const gameMessages = document.querySelector("#game-messages");
@@ -40,17 +40,10 @@ function game(playerSelection) {
                     ++computerScore;
                     return "You lose! Paper beats rock!";
                 case "scissors":
-                    ++playerScore;
-                    return "You won! Scissors beats paper";
-            }
-        }
-        
-        if (playerSelection === "paper") {
-            switch (computerSelection) {
-                case "rock":
-                    ++playerScore;
-                    return "You win! Paper beats rock!";
-                case "paper":
+                    ++playerScore;    /*
+                    let newScore = document.createTextNode(`Score   ${playerScore}:${computerScore}`);
+                    oldScore.replaceWith(newScore);
+                    */
                     return "It is a tie! You both selected paper!";
                 case "scissors":
                     ++computerScore;
@@ -83,6 +76,13 @@ function game(playerSelection) {
     let resultMessage = document.createElement('div');
     resultMessage.textContent = `${playRound(playerSelection, computerSelection)}`;
     gameMessages.appendChild(resultMessage);
+
+    const oldScore = document.querySelector('.score');
+
+    const newScore = document.createElement('div');
+    newScore.classList.add('score');
+    newScore.textContent = `Score   ${playerScore}:${computerScore}`;
+    oldScore.replaceWith(newScore);
 }
 
 const rock = document.querySelector('#rock');
